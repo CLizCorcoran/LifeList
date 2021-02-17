@@ -1,0 +1,27 @@
+
+
+
+a {
+  text-decoration: none;
+}
+
+.nav-link:hover, .nav-link:focus {
+  text-decoration: none;
+}
+
+.life_list {
+  padding-top: 0.324219rem;
+  padding-bottom: 0.324219rem;
+  margin-right: 1rem;
+  font-size: 1.171875rem;
+  line-height: inherit;
+  white-space: nowrap;
+}
+
+.separator {
+    margin: 0 12px;
+    border-left: 1px solid #fff; 
+    height: 24px;
+    width: 0;
+    display: inline;
+}
