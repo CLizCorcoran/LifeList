@@ -1,7 +1,7 @@
 import { findByLabelText } from "@testing-library/react";
 import React from "react";
 import NavTab from "./NavTab.jsx";
-import logo from "./img/todofilled.png";
+import logo from "./img/todoblue.png";
 
 import './css/App.css';
 
