@@ -4,6 +4,7 @@ import NavBar from "./NavBar.jsx";
 import Contact from "./Contact.jsx";
 import Login from "./Login.jsx";
 import ListView from "./ListView.jsx";
+import ListAdd from "./ListAdd.jsx";
 
 
 const Hello = props => {
@@ -41,6 +42,9 @@ class App extends React.Component {
             <Route path="/list">
               <ListView user={this.state.user} />
             </Route> 
+            <Route path="/list/add">
+              <ListAdd />
+            </Route>
             <Route path="/contact" component={Contact} />
             <Route path="/login">
               <Login login={this.login} />
