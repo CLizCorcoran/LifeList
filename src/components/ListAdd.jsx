@@ -27,7 +27,7 @@ class ListAdd extends React.Component {
 
                 <div className="form-group">
                     <label >Title:</label>
-                    <input className="form-control" type="text" id="title" name="title" value={this.state.task} onChange={this.handleChange} />
+                    <input className="form-control" type="text" id="title" name="title" value={this.state.title} onChange={this.handleChange} />
                 </div>
                 <div className="form-group">
                     <label >Description:</label>

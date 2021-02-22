@@ -93,8 +93,8 @@ class ListView extends React.Component {
                         <tbody>
                             {this.props.items.map((items, i) => {
                                 return (
-                                    <tr>
-                                        <td><i class="fas fa-trash-alt fa-2x"/></td>
+                                    <tr key={items.id}>
+                                        <td><i className="fas fa-trash-alt fa-2x" onClick={ () => this.props.onDelete(items.id)}  /></td>
                                         <td>{items.title}</td>
                                         <td></td>
                                         <td></td>

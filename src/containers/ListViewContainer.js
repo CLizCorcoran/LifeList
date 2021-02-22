@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import ListView from "../components/ListView.jsx";
+import deleteEventItem from "../actions/deleteEventItem.js";
 
 const mapStateToProps = state => {
     return {
@@ -8,6 +9,14 @@ const mapStateToProps = state => {
     };
 };
 
-const ListViewContainer = connect(mapStateToProps, null)(ListView);
+const mapDispatchToProps = dispatch => {
+    return {
+        onDelete: id => {
+            dispatch(deleteEventItem(id));
+        }
+    };
+};
+
+const ListViewContainer = connect(mapStateToProps, mapDispatchToProps)(ListView);
 
 export default ListViewContainer;
