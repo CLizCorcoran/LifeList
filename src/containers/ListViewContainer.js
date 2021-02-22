@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import ListView from "../components/ListView.jsx";
 import deleteEventItem from "../actions/deleteEventItem.js";
+import toggleComplete from "../actions/toggleComplete.js";
 
 const mapStateToProps = state => {
     return {
@@ -13,6 +14,10 @@ const mapDispatchToProps = dispatch => {
     return {
         onDelete: id => {
             dispatch(deleteEventItem(id));
+        },
+
+        onToggleComplete: id => {
+            dispatch(toggleComplete(id));
         }
     };
 };

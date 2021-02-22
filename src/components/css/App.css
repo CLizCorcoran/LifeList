@@ -279,6 +279,11 @@ table {
   border-top: 1px solid #dee2e6;
 }
 
+.table-hover tbody tr:hover {
+  color: #222;
+  background-color: rgba(0, 0, 0, 0.075);
+}
+
 .fa-trash-alt {
   cursor: pointer;
   color:  #008cba;
@@ -287,4 +292,24 @@ table {
 .fa-trash-alt:hover {
   color:#006f94;
   
+}
+
+.fa-check {
+  color: white;
+}
+
+.fa-check.complete {
+  color: #43ac6a;
+}
+
+
+
+.fa-check:hover {
+  /*color:#43ac6a;*/
+  color: #dbdbdb;
+  
+}
+
+.fa-check.complete:hover {
+  color: #389059;
 }

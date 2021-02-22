@@ -83,6 +83,7 @@ class ListView extends React.Component {
                         <thead>
                             <tr>
                                 <th></th>
+                                <th></th>
                                 <th>Title</th>
                                 <th>Due Date</th>
                                 <th>Priority</th>
@@ -92,9 +93,14 @@ class ListView extends React.Component {
 
                         <tbody>
                             {this.props.items.map((items, i) => {
+                                let checkClass = "fas fa-check fa-2x";
+                                if (items.complete) 
+                                    checkClass += " complete";
+
                                 return (
                                     <tr key={items.id}>
                                         <td><i className="fas fa-trash-alt fa-2x" onClick={ () => this.props.onDelete(items.id)}  /></td>
+                                        <td><i className={checkClass} onClick={ () => this.props.onToggleComplete(items.id)}/></td>
                                         <td>{items.title}</td>
                                         <td></td>
                                         <td></td>
