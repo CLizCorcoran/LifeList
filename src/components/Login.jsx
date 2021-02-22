@@ -10,17 +10,19 @@ class Login extends React.Component {
         this.state = { username: "", password: "" };
 
         this.handleChange = this.handleChange.bind(this);
-        this.handleLogin = this.handleLogin.bind(this);
+        //this.handleLogin = this.handleLogin.bind(this);
     }
 
     handleChange(event) {
         this.setState({ [event.target.name]: event.target.value });
     }
 
+    /*
     handleLogin(event) {
         this.props.login( this.state.username, this.state.password);
         this.setState( { username: "", password: ""});
     }
+    */
 
     render() {
 
@@ -37,7 +39,11 @@ class Login extends React.Component {
                 <div className="form-group">
                     <input className="form-control" type="password" id="password" name="password" placeholder="Password" value={this.state.password} onChange={this.handleChange} />
                 </div>
-                <button id="login_button" onClick={this.handleLogin}>Log in</button>
+                <button id="login_button" onClick={ () =>
+                    this.props.onLogin(this.state.username)
+                    }>
+                    Log in
+                </button>
             </div>
         )
     };

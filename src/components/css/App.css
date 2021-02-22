@@ -192,6 +192,14 @@ button {
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #3bceff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgb(0 140 186 / 25%);
+}
+
 textarea.form-control {
   height: auto;
 }
@@ -238,10 +246,13 @@ textarea.form-control {
 #listtable {
   margin: auto;
   width: 75%;
-  padding-top: 75px;
-  display: flex;
+  padding-top: 60px;
+  
 }
 
+#add_button {
+  margin-bottom: 10px;
+}
 
 .table {
   width: 100%;

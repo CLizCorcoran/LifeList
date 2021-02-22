@@ -2,9 +2,9 @@ import React from "react";
 import { BrowserRouter, Switch, Redirect, Route } from "react-router-dom";
 import NavBar from "./NavBar.jsx";
 import Contact from "./Contact.jsx";
-import Login from "./Login.jsx";
+import LoginContainer from "../containers/LoginContainer.js";
+import ListAddContainer from "../containers/ListAddContainer.js";
 import ListView from "./ListView.jsx";
-import ListAdd from "./ListAdd.jsx";
 
 
 const Hello = props => {
@@ -19,17 +19,19 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
-    this.login = this.login.bind(this);
+    //this.login = this.login.bind(this);
 
-    this.state = {user: ""};
+    //this.state = {user: ""};
   }
 
+  /*
   login(username, password) {
     console.log("Welcome " + username + "!");
     this.setState({user: username});
 
     return true;  // Crazy how it always authenticates!  
   }
+  */
 
 
   render() {
@@ -39,16 +41,12 @@ class App extends React.Component {
           <NavBar />
           
           <Switch>
-            <Route path="/list">
-              <ListView user={this.state.user} />
+            <Route exact path="/list">
+              <ListView user="Pull from State" />
             </Route> 
-            <Route path="/list/add">
-              <ListAdd />
-            </Route>
+            <Route path="/list/add" component={ListAddContainer} />
             <Route path="/contact" component={Contact} />
-            <Route path="/login">
-              <Login login={this.login} />
-            </Route>
+            <Route path="/login" component={LoginContainer} />
           </Switch>
 
         </div>
