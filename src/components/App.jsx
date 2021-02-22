@@ -4,7 +4,7 @@ import NavBar from "./NavBar.jsx";
 import Contact from "./Contact.jsx";
 import LoginContainer from "../containers/LoginContainer.js";
 import ListAddContainer from "../containers/ListAddContainer.js";
-import ListView from "./ListView.jsx";
+import ListViewContainer from "../containers/ListViewContainer.js";
 
 
 const Hello = props => {
@@ -41,9 +41,7 @@ class App extends React.Component {
           <NavBar />
           
           <Switch>
-            <Route exact path="/list">
-              <ListView user="Pull from State" />
-            </Route> 
+            <Route exact path="/list" component={ListViewContainer} />;
             <Route path="/list/add" component={ListAddContainer} />
             <Route path="/contact" component={Contact} />
             <Route path="/login" component={LoginContainer} />

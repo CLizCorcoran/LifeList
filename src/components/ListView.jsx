@@ -58,15 +58,15 @@ class ListView extends React.Component {
 
     render() {
 
-
-        if (this.props.user == "") {
+        if (this.props.username == "") {
             return (
                 <div className="contact">
                     <h1>Life List</h1>
                     <h2>Log in to start organizing your life today!</h2>
                 </div>
             )
-        }
+        };
+
 
         return (
             <div id="listview">
@@ -79,7 +79,31 @@ class ListView extends React.Component {
                 </div>
                 <div id="listtable">
                     <New />
-                    <Titles />
+                    <table className="table table-hover">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Title</th>
+                                <th>Due Date</th>
+                                <th>Priority</th>
+                                <th>Completion Date</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            {this.props.items.map((items, i) => {
+                                return (
+                                    <tr>
+                                        <td></td>
+                                        <td>{items.title}</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                )
+                            })}
+                        </tbody>
+                    </table>
                 </div>
             </div>
         )
