@@ -278,3 +278,13 @@ table {
   vertical-align: top;
   border-top: 1px solid #dee2e6;
 }
+
+.fa-trash-alt {
+  cursor: pointer;
+  color:  #008cba;
+}
+
+.fa-trash-alt:hover {
+  color:#006f94;
+  
+}

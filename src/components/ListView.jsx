@@ -94,7 +94,7 @@ class ListView extends React.Component {
                             {this.props.items.map((items, i) => {
                                 return (
                                     <tr>
-                                        <td></td>
+                                        <td><i class="fas fa-trash-alt fa-2x"/></td>
                                         <td>{items.title}</td>
                                         <td></td>
                                         <td></td>
