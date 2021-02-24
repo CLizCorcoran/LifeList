@@ -1,12 +1,13 @@
 import React from "react"
 //import { Prompt } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import './css/App.css';
 
 class ListAdd extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {title: "", description: "", priority: "" }
+        this.state = {title: "", description: "", priority: "", return: false }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -17,10 +18,17 @@ class ListAdd extends React.Component {
 
     handleSubmit() {
         this.props.onAdd(this.state.title, this.state.description);
-        this.setState({ title: "", description: "", priority: "" });
+        this.setState({ title: "", description: "", priority: "", return: true });
+		
+
     }
 
     render() {
+
+        if (this.state.return)
+            return <Redirect to="/list" />;
+
+
         return (
             <div className="contact">
                 <h1>Add Life List Task</h1>

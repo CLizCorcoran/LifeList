@@ -1,5 +1,6 @@
 import React from "react"
 //import { Prompt } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import './css/App.css';
 
 class Edit extends React.Component {
@@ -8,7 +9,7 @@ class Edit extends React.Component {
 
         console.log(this.props);
         if (props.item === undefined)
-            this.state = {title: "", description: "", priority: "" };
+            this.state = {title: "", description: "", priority: "", return: false };
         else
             this.state = {title: props.item.title, description: props.item.description, priority: "" };
             
@@ -22,10 +23,14 @@ class Edit extends React.Component {
 
     handleSubmit() {
         this.props.onEdit(this.props.id, this.state.title, this.state.description);
-        this.setState({ title: "", description: "", priority: "" });
+        this.setState({ title: "", description: "", priority: "", return: true });
     }
 
     render() {
+
+        if (this.state.return)
+            return <Redirect to="/list" />;
+
         
         return (
             <div className="contact">
