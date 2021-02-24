@@ -1,4 +1,3 @@
-import { findByLabelText } from "@testing-library/react";
 import React from "react";
 import NavTab from "./NavTab.jsx";
 import logo from "./img/todoblue.png";
@@ -12,7 +11,6 @@ const NavBar = () => {
         flexWrap: "wrap",
         alignItems: "center",
         justifyContent: "space-between",
-        padding: "0.5rem 1rem",
         fontSize: "0.825rem",
         fontWeight: "300",
         padding: "0.5rem 1rem"

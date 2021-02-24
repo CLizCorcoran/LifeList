@@ -8,9 +8,11 @@ var initialEventData = [];
 var nextId = 0;
 
 const eventData = (state = initialEventData, action) => {
+
+    var stateCopy = [];
+
     switch(action.type) {
         case ADD_EVENT_ITEM:
-            var stateCopy = [];
             stateCopy = state.slice();
             action.item.id = nextId;
             action.item.complete = false;
@@ -19,14 +21,13 @@ const eventData = (state = initialEventData, action) => {
             return stateCopy;
 
         case DELETE_EVENT_ITEM:
-            var stateCopy = [];
             stateCopy = state.slice();
             const delIdx = stateCopy.findIndex(element => element.id === action.id);
             stateCopy.splice(delIdx, 1);
             return stateCopy;
 
         case TOGGLE_COMPLETE:
-            var stateCopy = state.slice();
+            stateCopy = state.slice();
             const idx = stateCopy.findIndex(element => element.id === action.id);
             stateCopy[idx].complete = ! stateCopy[idx].complete;
             return stateCopy;

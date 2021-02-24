@@ -1,5 +1,4 @@
 import React from "react"
-import { Prompt } from "react-router-dom";
 import logo from "./img/todowhite.png";
 import './css/App.css';
 

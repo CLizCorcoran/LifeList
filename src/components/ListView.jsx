@@ -1,27 +1,9 @@
 import React from "react"
-import { BrowserRouter, Link, Prompt } from "react-router-dom";
+import { Link } from "react-router-dom";
 import FilterContainer from "../containers/FilterContainer.js";
 import { FiltersEnum } from "../constants/constants.js";
 import './css/App.css';
 
-
-
-const Titles = props => {
-    return (
-        <table className="table table-hover">
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>Title</th>
-                    <th>Due Date</th>
-                    <th>Priority</th>
-                    <th>Completion Date</th>
-                </tr>
-            </thead>
-
-        </table>
-    )
-}
 
 
 const New = props => {
@@ -32,13 +14,10 @@ const New = props => {
 }
 
 class ListView extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
     render() {
 
-        if (this.props.username == "") {
+        if (this.props.username === "") {
             return (
                 <div className="contact">
                     <h1>Life List</h1>
@@ -75,16 +54,13 @@ class ListView extends React.Component {
                             {this.props.items.map((items, i) => {
                                 var addItem = false;
                                 let checkClass = "fas fa-check fa-2x";
-                                console.log("Filter:  " + this.props.filter);
-                                console.log(FiltersEnum.complete);
-                                if (items.complete && this.props.filter != FiltersEnum.incomplete) {
+ 
+                                if (items.complete && this.props.filter !== FiltersEnum.incomplete) {
                                     checkClass += " complete";
                                     addItem = true;
-                                    console.log("Add complete Item");
                                 } 
-                                else if (!items.complete && this.props.filter != FiltersEnum.complete) {
+                                else if (!items.complete && this.props.filter !== FiltersEnum.complete) {
                                     addItem = true;
-                                    console.log("Add incomplete Item");
                                 }
                                     
                                 if (addItem) 

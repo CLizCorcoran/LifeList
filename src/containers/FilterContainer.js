@@ -17,6 +17,6 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-const FilterContainer = connect(null, mapDispatchToProps)(Filter);
+const FilterContainer = connect(mapStateToProps, mapDispatchToProps)(Filter);
 
 export default FilterContainer;
