@@ -1,5 +1,7 @@
 import React from "react"
 import { BrowserRouter, Link, Prompt } from "react-router-dom";
+import FilterContainer from "../containers/FilterContainer.js";
+import { FiltersEnum } from "../constants/constants.js";
 import './css/App.css';
 
 
@@ -19,28 +21,6 @@ const Titles = props => {
 
         </table>
     )
-}
-
-
-const Filter = props => {
-    return (
-        <div id="filter_group" className="btn-group btn-group-toggle">
-            <label className="btn btn-secondary btn_filter">
-                <input type="radio" id="active" name="filter_items" />
-            Active
-            </label>
-            <label className="btn btn-secondary btn_filter">
-                <input type="radio" id="completed" name="filter_items" />
-            Completed
-            </label>
-            <label className="btn btn-secondary btn_filter">
-                <input type="radio" id="all" name="filter_items" />
-            All
-            </label>
-        </div>
-
-
-    );
 }
 
 
@@ -71,7 +51,7 @@ class ListView extends React.Component {
         return (
             <div id="listview">
                 <div id="filters">
-                    <Filter />
+                    <FilterContainer />
 
                 </div>
                 <div>
@@ -93,20 +73,34 @@ class ListView extends React.Component {
 
                         <tbody>
                             {this.props.items.map((items, i) => {
+                                var addItem = false;
                                 let checkClass = "fas fa-check fa-2x";
-                                if (items.complete) 
+                                console.log("Filter:  " + this.props.filter);
+                                console.log(FiltersEnum.complete);
+                                if (items.complete && this.props.filter != FiltersEnum.incomplete) {
                                     checkClass += " complete";
+                                    addItem = true;
+                                    console.log("Add complete Item");
+                                } 
+                                else if (!items.complete && this.props.filter != FiltersEnum.complete) {
+                                    addItem = true;
+                                    console.log("Add incomplete Item");
+                                }
+                                    
+                                if (addItem) 
+                                    return (
+                                        <tr key={items.id}>
+                                            <td><i className="fas fa-trash-alt" onClick={ () => this.props.onDelete(items.id)}  /></td>
+                                            <td><i className={checkClass} onClick={ () => this.props.onToggleComplete(items.id)}/></td>
+                                            <td>{items.title}</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    )
 
-                                return (
-                                    <tr key={items.id}>
-                                        <td><i className="fas fa-trash-alt fa-2x" onClick={ () => this.props.onDelete(items.id)}  /></td>
-                                        <td><i className={checkClass} onClick={ () => this.props.onToggleComplete(items.id)}/></td>
-                                        <td>{items.title}</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                )
+                                // If item shouldn't be rendered, simply return null.
+                                return null;
                             })}
                         </tbody>
                     </table>

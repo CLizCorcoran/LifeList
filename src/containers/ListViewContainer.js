@@ -6,7 +6,8 @@ import toggleComplete from "../actions/toggleComplete.js";
 const mapStateToProps = state => {
     return {
         username: state.userData,
-        items: state.eventData
+        items: state.eventData,
+        filter: state.filterValue
     };
 };
 

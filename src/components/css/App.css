@@ -141,6 +141,12 @@ button:hover {
   border-color: #d5d5d5;
 }
 
+.btn-secondary:not(:disabled):not(.disabled):active, .btn-secondary:not(:disabled):not(.disabled).active, .show > .btn-secondary.dropdown-toggle {
+  color: #222;
+  background-color: #d5d5d5;
+  border-color: #cecece;
+}
+
 .btn-group > .btn:focus, .btn-group > .btn:active, .btn-group > .btn.active, .btn-group-vertical > .btn:focus, .btn-group-vertical > .btn:active, .btn-group-vertical > .btn.active {
   z-index: 1;
 }
@@ -243,6 +249,14 @@ textarea.form-control {
   
 }
 
+input[type=radio]:checked {
+    background-color:yellow;
+}
+
+input[type=radio]:not(old):checked + label {
+  background-color: red;
+}
+
 #listtable {
   margin: auto;
   width: 75%;
@@ -291,7 +305,7 @@ table {
 
 .fa-trash-alt:hover {
   color:#006f94;
-  
+    
 }
 
 .fa-check {

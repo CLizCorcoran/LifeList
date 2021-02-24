@@ -31,7 +31,7 @@ const eventData = (state = initialEventData, action) => {
             stateCopy[idx].complete = ! stateCopy[idx].complete;
             return stateCopy;
 
-        
+            
         default:
             return state;
     }
