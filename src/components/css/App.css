@@ -234,6 +234,10 @@ textarea.form-control {
   margin-right: 20px;
 }
 
+#login h2 {
+  padding-bottom: 5px;
+}
+
 
 /*----------------------------------------------------------------*/
 /*  LISTVIEW                                                      */
@@ -298,14 +302,19 @@ table {
   background-color: rgba(0, 0, 0, 0.075);
 }
 
-.fa-trash-alt, .fa-pen {
+.fa-trash-alt, .fa-pen, .fa-sign-out-alt {
   cursor: pointer;
   color:  #008cba;
 }
 
-.fa-trash-alt:hover, .fa-pen:hover {
+.fa-trash-alt:hover, .fa-pen:hover, .fa-sign-out-alt:hover {
   color:#006f94;
     
+}
+
+.fa-sign-out-alt {
+  padding-right: 5px;
+  
 }
 
 .fa-check {
