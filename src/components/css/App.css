@@ -298,12 +298,12 @@ table {
   background-color: rgba(0, 0, 0, 0.075);
 }
 
-.fa-trash-alt {
+.fa-trash-alt, .fa-pen {
   cursor: pointer;
   color:  #008cba;
 }
 
-.fa-trash-alt:hover {
+.fa-trash-alt:hover, .fa-pen:hover {
   color:#006f94;
     
 }

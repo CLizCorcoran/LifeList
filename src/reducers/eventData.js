@@ -1,5 +1,6 @@
 import {
     ADD_EVENT_ITEM,
+    EDIT_EVENT_ITEM,
     DELETE_EVENT_ITEM,
     TOGGLE_COMPLETE
 } from "../constants/constants.js";
@@ -19,6 +20,14 @@ const eventData = (state = initialEventData, action) => {
             stateCopy.push(action.item);
             nextId++;
             return stateCopy;
+
+        case EDIT_EVENT_ITEM:
+            stateCopy = state.slice();
+            const editIdx = stateCopy.findIndex(element => element.id === action.id);
+            stateCopy[editIdx].title = action.title;
+            stateCopy[editIdx].description = action.description;
+            return stateCopy;
+            
 
         case DELETE_EVENT_ITEM:
             stateCopy = state.slice();

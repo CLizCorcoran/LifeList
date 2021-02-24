@@ -6,8 +6,6 @@ const addEventItem = (title, description) => {
         item: {
             title: title,
             description: description
-   
-            
         }
     };
 };

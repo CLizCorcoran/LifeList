@@ -13,6 +13,16 @@ const New = props => {
     )
 }
 
+
+const Edit = props => {
+    var to = "/list/edit/" + props.id;
+    return (
+        <Link to={to}>
+            <i className="fas fa-pen" />
+        </Link>
+    )
+}
+
 class ListView extends React.Component {
 
     render() {
@@ -43,6 +53,7 @@ class ListView extends React.Component {
                             <tr>
                                 <th></th>
                                 <th></th>
+                                <th></th>
                                 <th>Title</th>
                                 <th>Due Date</th>
                                 <th>Priority</th>
@@ -67,6 +78,7 @@ class ListView extends React.Component {
                                     return (
                                         <tr key={items.id}>
                                             <td><i className="fas fa-trash-alt" onClick={ () => this.props.onDelete(items.id)}  /></td>
+                                            <td><Edit id={items.id}/></td>
                                             <td><i className={checkClass} onClick={ () => this.props.onToggleComplete(items.id)}/></td>
                                             <td>{items.title}</td>
                                             <td></td>
