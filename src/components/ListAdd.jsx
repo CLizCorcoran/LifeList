@@ -10,6 +10,7 @@ class ListAdd extends React.Component {
         this.state = {title: "", description: "", priority: "", return: false }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleCancel = this.handleCancel.bind(this);
     }
 
     handleChange(event) {
@@ -19,8 +20,10 @@ class ListAdd extends React.Component {
     handleSubmit() {
         this.props.onAdd(this.state.title, this.state.description);
         this.setState({ title: "", description: "", priority: "", return: true });
-		
+	}
 
+    handleCancel() {
+        this.setState({ title: "", description: "", priority: "", return: true });
     }
 
     render() {
@@ -52,7 +55,8 @@ class ListAdd extends React.Component {
 
                 </div>
                 
-                <button id="add_item" onClick={this.handleSubmit}>Add</button>
+                <button id="add_item" className="m-right" onClick={this.handleSubmit}>Add</button>
+                <button id="cancel" onClick={this.handleCancel}>Cancel</button>
 
                 
             </div>

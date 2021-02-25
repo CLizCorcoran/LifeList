@@ -29,6 +29,10 @@ input, button, select, optgroup, textarea {
   box-sizing: border-box;
 }
 
+.m-right {
+  margin-right: 10px;
+}
+
 .nav-link:hover, .nav-link:focus {
   text-decoration: none;
 }

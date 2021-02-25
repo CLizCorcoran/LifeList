@@ -15,6 +15,7 @@ class Edit extends React.Component {
             
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleCancel = this.handleCancel.bind(this);
     }
 
     handleChange(event) {
@@ -23,6 +24,10 @@ class Edit extends React.Component {
 
     handleSubmit() {
         this.props.onEdit(this.props.id, this.state.title, this.state.description);
+        this.setState({ title: "", description: "", priority: "", return: true });
+    }
+
+    handleCancel() {
         this.setState({ title: "", description: "", priority: "", return: true });
     }
 
@@ -55,7 +60,8 @@ class Edit extends React.Component {
 
                 </div>
                 
-                <button id="update_item" onClick={this.handleSubmit}>Update</button>
+                <button id="update_item" className="m-right" onClick={this.handleSubmit}>Update</button>
+                <button id="cancel" onClick={this.handleCancel}>Cancel</button>
 
                 
             </div>

@@ -1,5 +1,6 @@
 import React from "react"
 import { Prompt } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 import './css/App.css';
 
@@ -7,10 +8,11 @@ class Contact extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = { fname: "", lname: "", email: "", comments: "" };
+        this.state = { fname: "", lname: "", email: "", comments: "", return: false };
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleCancel = this.handleCancel.bind(this);
 
     }
 
@@ -26,10 +28,18 @@ class Contact extends React.Component {
     }
 
     handleSubmit() {
-        this.setState({ fname: "", lname: "", email: "", comments: "" });
+        this.setState({ fname: "", lname: "", email: "", comments: "", return: true });
+    }
+
+    handleCancel() {
+        this.setState({ fname: "", lname: "", email: "", comments: "", return: true });
     }
 
     render() {
+
+        if (this.state.return) 
+            return <Redirect to="/list" />;
+ 
 
         return (
             <div className="contact">
@@ -51,7 +61,8 @@ class Contact extends React.Component {
                     <label for="comments">Comments:</label>
                     <textarea className="form-control" id="comments" name="comments" value={this.state.comments} onChange={this.handleChange} />
                 </div>
-                <button id="submit" onClick={this.handleSubmit}>Submit</button>
+                <button id="submit" className="m-right" onClick={this.handleSubmit}>Submit</button>
+                <button id="cancel" onClick={this.handleCancel}>Cancel</button>
 
                 <Prompt when={!this.isFormEmpty()} message="Are you sure you want to leave without sending a message?" />
             </div>
