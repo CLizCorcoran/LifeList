@@ -1,5 +1,6 @@
 import React from "react";
 import NavTab from "./NavTab.jsx";
+import NavLoginContainer from "../containers/NavLoginContainer.js";
 import logo from "./img/todoblue.png";
 
 import './css/App.css';
@@ -32,7 +33,7 @@ const NavBar = () => {
             <div className="nav-bar">
                 <div className="separator"></div>
                 <NavTab to="/contact" label="Contact" />
-                <NavTab to="/login" label="Login" />
+                <NavLoginContainer to="/login" label="Login" />
             </div>
 
         </div>
