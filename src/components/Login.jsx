@@ -53,7 +53,7 @@ class Login extends React.Component {
                         <h2>Welcome {this.props.username}!</h2>
                         <i className="fas fa-sign-out-alt" onClick={() => {
                             this.state = { username: "", password: "", loggedIn: false };
-                            this.props.onLogin("");
+                            this.props.onLogout();
                         }} />
                     Sign out
                 </div>
