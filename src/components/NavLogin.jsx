@@ -26,7 +26,7 @@ const NavLogin = props => {
 
     return (
         <NavLink className={names} style={navStyle} activeStyle={activeStyle} to={props.to}>
-            <i className="fas fa-user" />
+            <i className="fas fa-user" title={props.username} />
         </NavLink>
     );
 };

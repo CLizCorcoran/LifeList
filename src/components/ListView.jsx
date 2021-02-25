@@ -18,7 +18,7 @@ const Edit = props => {
     var to = "/list/edit/" + props.id;
     return (
         <Link to={to}>
-            <i className="fas fa-pen" />
+            <i className="fas fa-pen" title="Modify this task" />
         </Link>
     )
 }
@@ -65,9 +65,11 @@ class ListView extends React.Component {
                             {this.props.items.map((items, i) => {
                                 var addItem = false;
                                 let checkClass = "fas fa-check fa-2x";
+                                let tooltip = "Mark this event complete";
  
                                 if (items.complete && this.props.filter !== FiltersEnum.incomplete) {
                                     checkClass += " complete";
+                                    tooltip = "Mark this event incomplete";
                                     addItem = true;
                                 } 
                                 else if (!items.complete && this.props.filter !== FiltersEnum.complete) {
@@ -77,9 +79,9 @@ class ListView extends React.Component {
                                 if (addItem) 
                                     return (
                                         <tr key={items.id}>
-                                            <td><i className="fas fa-trash-alt" onClick={ () => this.props.onDelete(items.id)}  /></td>
+                                            <td><i className="fas fa-trash-alt" title="Delete this task" onClick={ () => this.props.onDelete(items.id)}  /></td>
                                             <td><Edit id={items.id}/></td>
-                                            <td><i className={checkClass} onClick={ () => this.props.onToggleComplete(items.id)}/></td>
+                                            <td><i className={checkClass} title={tooltip} onClick={ () => this.props.onToggleComplete(items.id)}/></td>
                                             <td>{items.title}</td>
                                             <td></td>
                                             <td></td>
