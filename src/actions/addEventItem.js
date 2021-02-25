@@ -1,11 +1,12 @@
 import { ADD_EVENT_ITEM } from "../constants/constants.js";
 
-const addEventItem = (title, description) => {
+const addEventItem = (title, description, priority) => {
     return {
         type:  ADD_EVENT_ITEM,
         item: {
             title: title,
-            description: description
+            description: description,
+            priority: parseInt(priority)
         }
     };
 };

@@ -8,6 +8,7 @@ const FILTER_EVENT_ITEMS = "FILTER_EVENT_ITEMS";
 const CLEAR_EVENTS = "CLEAR_EVENTS";
 
 const FiltersEnum = Object.freeze({"all":1, "complete":2, "incomplete":3});
+const PriorityEnum = Object.freeze({"none": 0, "low":1, "medium":2, "high":3});
 
 module.exports = {
     LOGIN_USER,
@@ -16,7 +17,8 @@ module.exports = {
     EDIT_EVENT_ITEM,
     DELETE_EVENT_ITEM,
     TOGGLE_COMPLETE,
+    CLEAR_EVENTS,
     FILTER_EVENT_ITEMS,
     FiltersEnum,
-    CLEAR_EVENTS
+    PriorityEnum
 };

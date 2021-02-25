@@ -5,10 +5,27 @@ a {
   text-decoration: none;
 }
 
+h4, .h4 {
+  font-size: 1.40625rem;
+}
+
+h5, .h5 {
+  font-size: 1.171875rem;
+}
+
+h6, .h6 {
+  font-size: 0.9375rem;
+}
+
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   margin-bottom: 0.5rem;
   font-weight: 300;
   line-height: 1.2;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
 }
 
 label {
@@ -293,6 +310,7 @@ table {
 .table th {
   vertical-align: bottom;
   border-bottom: 2px solid #dee2e6;
+  text-align: left;
 }
 
 .table th, .table td {
@@ -304,6 +322,10 @@ table {
 .table-hover tbody tr:hover {
   color: #222;
   background-color: rgba(0, 0, 0, 0.075);
+}
+
+.icon_column {
+  width: 50px;
 }
 
 .fa-trash-alt, .fa-pen, .fa-sign-out-alt {

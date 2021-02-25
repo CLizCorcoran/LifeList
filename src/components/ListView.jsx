@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "react-router-dom";
 import FilterContainer from "../containers/FilterContainer.js";
-import { FiltersEnum } from "../constants/constants.js";
+import { FiltersEnum, PriorityEnum } from "../constants/constants.js";
 import './css/App.css';
 
 
@@ -37,6 +37,8 @@ class ListView extends React.Component {
         };
 
 
+
+
         return (
             <div id="listview">
                 <div id="filters">
@@ -51,13 +53,11 @@ class ListView extends React.Component {
                     <table className="table table-hover">
                         <thead>
                             <tr>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th>Title</th>
-                                <th>Due Date</th>
+                                <th className="icon_column"></th>
+                                <th className="icon_column"></th>
+                                <th className="icon_column"></th>
+                                <th>Tasks</th>
                                 <th>Priority</th>
-                                <th>Completion Date</th>
                             </tr>
                         </thead>
 
@@ -66,28 +66,41 @@ class ListView extends React.Component {
                                 var addItem = false;
                                 let checkClass = "fas fa-check fa-2x";
                                 let tooltip = "Mark this event complete";
- 
+
                                 if (items.complete && this.props.filter !== FiltersEnum.incomplete) {
                                     checkClass += " complete";
                                     tooltip = "Mark this event incomplete";
                                     addItem = true;
-                                } 
+                                }
                                 else if (!items.complete && this.props.filter !== FiltersEnum.complete) {
                                     addItem = true;
                                 }
+
+                                if (addItem) {
+
+                                    let priority = "";
+                                    switch (items.priority) {
+                                        case PriorityEnum.low:
+                                            priority = "low";
+                                            break;
+                                        case PriorityEnum.medium:
+                                            priority = "Medium";
+                                            break;
+                                        case PriorityEnum.high:
+                                            priority = "HIGH";
+                                            break;
+                                    }
                                     
-                                if (addItem) 
                                     return (
                                         <tr key={items.id}>
-                                            <td><i className="fas fa-trash-alt" title="Delete this task" onClick={ () => this.props.onDelete(items.id)}  /></td>
-                                            <td><Edit id={items.id}/></td>
-                                            <td><i className={checkClass} title={tooltip} onClick={ () => this.props.onToggleComplete(items.id)}/></td>
-                                            <td>{items.title}</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                                            <td><i className="fas fa-trash-alt" title="Delete this task" onClick={() => this.props.onDelete(items.id)} /></td>
+                                            <td><Edit id={items.id} /></td>
+                                            <td><i className={checkClass} title={tooltip} onClick={() => this.props.onToggleComplete(items.id)} /></td>
+                                            <td><h6>{items.title}</h6>{items.description}</td>
+                                            <td>{priority}</td>
                                         </tr>
                                     )
+                                }
 
                                 // If item shouldn't be rendered, simply return null.
                                 return null;

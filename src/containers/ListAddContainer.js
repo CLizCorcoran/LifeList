@@ -4,8 +4,8 @@ import addEventItem from "../actions/addEventItem.js";
 
 const mapDispatchToProps = dispatch => {
     return {
-        onAdd: (title, description) => {
-            dispatch(addEventItem(title, description));
+        onAdd: (title, description, priority) => {
+            dispatch(addEventItem(title, description, priority));
         }
     };
 };
