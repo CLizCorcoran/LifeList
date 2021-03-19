@@ -124,6 +124,8 @@ class ListView extends React.Component {
                                         case PriorityEnum.high:
                                             priority = "HIGH";
                                             break;
+                                        default:
+                                            priority = "";
                                     }
                                     
                                     return (

@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+# List List - A Web App for Task Management
+## Overview
+This web application is meant to demonstrate knowledge of React, React
+Router, and Redux.  Life List allows the user to create, edit, and delete 
+events to help manage and or organize their lives.  
+
+There is not a backend component to this web application; therefore, no state is saved.  
+
+An extremely rudimentary and almost completely non-functional authentication 
+system is included.  
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+## User Stories
+As a user, I would like to be able to create todo items.
 
-### `yarn start`
+As a user, I would like to be able to check my todo items off as completed as I accomplish them.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+As a user, I would like to be able to prioritize my todo items.  
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `yarn test`
+## About Life List
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Logging In
+Upon first entering Life List, the user will be informed that in order to proceed, they must log in.  
 
-### `yarn build`
+A user can log in by clicking the Login link at the upper right of the navigation bar.  They will be presented with a form asking for their username and password.  A user only needs to provide a username; the password field is completely ignored and can even remain empty.  
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+After the user has logged in, note that the 'Login' link changes to a person.  Clicking this link now will present the user with the ability to Log out.  
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Add a task to Life List
+After logging in, the user will be directed to the Life List.  Because no
+information is saved at this time, the list will always be empty.  
 
-### `yarn eject`
+To Add an event, the user simply clicks on the "Add" button.  
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+At this point, the user will be presented with the "Add Life List Task" form.  There they can fill in information about their Life Task.  
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The user has the option to add this task to their list or cancel out of the form.  Either way, they will then be redirected back to their List view.  
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Managing Life List Events
+The user can perform several actions on their life task items.  They can delete, edit, or mark the item as complete/incomplete.
 
-## Learn More
+They also have the ability to filter their tasks to view only the incomplete tasks, only the completed tasks, or all tasks regardless of completion state.    
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Buttons to perform these tasks are on the same row as the task item.  
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### Deleting a life task
+To delete a life task, the user clicks the trash can button.  This button is located on the far left within the life task row.  
 
-### Code Splitting
+#### Editing a life task
+To edit a life task, the user clicks the pencil button.  This button is located on the right of the trash can button within the life task row.  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+This button will bring up the Edit Life List Task form.  There the user can 
+modify any of the life task's information.  The user can then choose to save their changes via the 'Update' button or cancel their changes via the 'Cancel' button.
 
-### Analyzing the Bundle Size
+Regardless, the user will then be redirected back to the Life List page.  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+#### Marking a life task as Complete or Incomplete.  
+When a life task is incomplete, a check mark will not appear until the user
+hovers over the task's row.  Upon hovering, a white checkmark will appear.  
+To mark the task as complete, they simply click on the checkmark.  At that point, the checkmark should remain green even after the user is no longer hovering on that row.  
 
-### Making a Progressive Web App
+To mark a task as incomplete, the user simply clicks on the green checkmark.  Doing so will return it to the white color to indicate that it is
+now incomplete.  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

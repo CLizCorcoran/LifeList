@@ -24,7 +24,7 @@ const NavLogin = props => {
     //var names = "nav-link " + props.className;
     var names = "nav-link ";
 
-    if (props.username == "" ) {
+    if (props.username === "" ) {
         return (
             <NavTab to={props.to} label="Login" />
         )
