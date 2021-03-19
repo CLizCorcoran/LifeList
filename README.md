@@ -1,4 +1,4 @@
-# List List - A Web App for Task Management
+# Life List - A Web App for Task Management
 ## Overview
 This web application is meant to demonstrate knowledge of React, React
 Router, and Redux.  Life List allows the user to create, edit, and delete 
