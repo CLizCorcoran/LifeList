@@ -5,6 +5,12 @@ import logo from "./img/todoblue.png";
 
 import './css/App.css';
 
+//---------------------------------------------------------------
+// The rendering and implementation of the Navigation bar.
+//
+// The child component, NabTab is used for the List List link
+//  as well as for the Contact link.
+//---------------------------------------------------------------
 const NavBar = () => {
     var style = {
         backgroundColor: "#008cba",

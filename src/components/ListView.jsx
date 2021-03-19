@@ -4,8 +4,20 @@ import FilterContainer from "../containers/FilterContainer.js";
 import { FiltersEnum, PriorityEnum } from "../constants/constants.js";
 import './css/App.css';
 
+//---------------------------------------------------------------
+// Implementation of the ListView component - the component
+//  responsible for the rendering and functionality of the 
+//  list of events.  
+//
+// Helper components are also included in this file.
+//      New - the Add button
+//      Edit - the edit (pencil) button
+//---------------------------------------------------------------
 
 
+//---------------------------------------------------------------
+// The "Add" button
+//---------------------------------------------------------------
 const New = props => {
 
     return (
@@ -14,6 +26,9 @@ const New = props => {
 }
 
 
+//---------------------------------------------------------------
+// The Edit (pencil) button
+//---------------------------------------------------------------
 const Edit = props => {
     var to = "/list/edit/" + props.id;
     return (
@@ -23,10 +38,30 @@ const Edit = props => {
     )
 }
 
+
+//---------------------------------------------------------------
+// ListView is responsible for the rendering and outermost
+//  implementation of the event list items.  
+//
+// A user must be logged in to see their event items.  
+//
+// Each list item is composed of the following pieces:
+//  A trash can for deletion.
+//  A pencil button for editing the event.  
+//  A checkmark button - if Complete, the button will appear green
+//                       if Incomplete, the button will not appear 
+//                          until the user hovers over the item.
+//  The title of the event in slightly larger font; 
+//      Below - the description of the event in slightly smaller font.  
+//  The priority of the event item.  Internally, these are tracks as
+//  enumerations.  Possible values are 
+//      None, Low, Medium, High
+//---------------------------------------------------------------
 class ListView extends React.Component {
 
     render() {
 
+        // If the user has not yet logged in, ask them to do so.
         if (this.props.username === "") {
             return (
                 <div className="contact">
@@ -38,7 +73,7 @@ class ListView extends React.Component {
 
 
 
-
+        // Otherwise, render the current list of event list items.  
         return (
             <div id="listview">
                 <div id="filters">

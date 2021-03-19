@@ -4,6 +4,14 @@ import { Redirect } from "react-router-dom";
 
 import './css/App.css';
 
+
+//----------------------------------------------------------------
+//  Renders and collects changes for the Contact form.  
+//      This form is pretty much non-functional in that it 
+//      does not do anything with the information collected.
+//  
+//  No email is sent.                                                       
+//----------------------------------------------------------------
 class Contact extends React.Component {
     constructor(props) {
         super(props);

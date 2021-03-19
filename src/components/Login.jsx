@@ -7,8 +7,6 @@ class Login extends React.Component {
     constructor(props) {
         super(props);
 
-        //this.initialUser = props.username;
-
         this.state = { username: "", password: "", loggedIn: false };
 
         this.handleChange = this.handleChange.bind(this);
@@ -29,19 +27,13 @@ class Login extends React.Component {
 
     render() {
 
-
-        /*
-          <button id="logout_button" onClick={ () => {
-              this.state = { username: "", password: "", loggedIn: false };
-              this.props.onLogin("");
-          }}>
-          Log out
-      </button>
-  */
-
+        // If the user is already logged in, redirect them back to 
+        //  the list.  
         if (this.state.loggedIn)
             return <Redirect to="/list" />;
 
+        // If a user is already logged in, Welcome them and give them
+        //  the ability to Sign Out.
         if (this.props.username !== "") {
             return (
                 <div id="login">
@@ -61,10 +53,9 @@ class Login extends React.Component {
             )
         }
 
-
-
-
-
+        // If no one is logged in, render the form to allow them to do
+        //  so.  Not that the password is completely ignored.  None
+        //  even needs to be supplied.  
         return (
 
             <div id="login">

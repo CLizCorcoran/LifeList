@@ -15,13 +15,11 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
     return {
         onEdit: (id, title, description) => {
-            //dispatch(selectEventItem(id));
             dispatch(editEventItem(id, title, description));
         }
     };
 };
 
-// No state is given to the add page - it is empty by default.  
 const EditContainer = connect(mapStateToProps, mapDispatchToProps)(Edit);
 
 export default EditContainer;

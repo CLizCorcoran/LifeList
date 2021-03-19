@@ -2,6 +2,9 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import './css/App.css';
 
+//---------------------------------------------------------------
+// Helper component to render links in the NavBar
+//---------------------------------------------------------------
 const NavTab = props => {
     var activeStyle = {
         color: "#fff"

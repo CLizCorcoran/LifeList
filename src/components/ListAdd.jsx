@@ -4,6 +4,15 @@ import { Redirect } from "react-router-dom";
 import { PriorityEnum } from "../constants/constants.js";
 import './css/App.css';
 
+
+//---------------------------------------------------------------
+// Implements the adding of a new list item functionality
+//
+//  The user can choose to Add the new item or Cancel their add.
+//      Either way, the user will be redirected back to the list
+//      page after the add or cancel.  
+//----------------------------------------------------------------
+
 class ListAdd extends React.Component {
     constructor(props) {
         super(props);

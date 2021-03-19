@@ -3,6 +3,12 @@ import { NavLink } from "react-router-dom";
 import NavTab from "./NavTab.jsx";
 import './css/App.css';
 
+//---------------------------------------------------------------
+// Implementation of the Login link.
+//  
+//  Renders a person icon when someone is logged in; 
+//  Renders 'Login' when someone is not logged in.
+//---------------------------------------------------------------
 const NavLogin = props => {
     var activeStyle = {
         color: "#fff"

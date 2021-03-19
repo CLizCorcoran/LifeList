@@ -2,7 +2,9 @@ import React from "react";
 import { FiltersEnum } from "../constants/constants.js";
 import './css/App.css';
 
-
+//---------------------------------------------------
+// Implements the Filter button functionality.
+//---------------------------------------------------
 const FilterButton = props => {
 
     return (

@@ -4,6 +4,18 @@ import { Redirect } from "react-router-dom";
 import { PriorityEnum } from "../constants/constants.js";
 import './css/App.css';
 
+
+//---------------------------------------------------------------
+// Implements the modification of a given event list item.  
+//  
+//  The user will be presented with a form filled in with the
+//  current values of the event.  The user is then capable of 
+//  changing any of the values.  
+//
+//  The user can then choose to 'Save' their new values or 'Cancel'
+//
+//  Either way, they will then be redirected back to the event list.
+//---------------------------------------------------------------
 class Edit extends React.Component {
     constructor(props) {
         super(props);
