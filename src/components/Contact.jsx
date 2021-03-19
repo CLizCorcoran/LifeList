@@ -36,11 +36,22 @@ class Contact extends React.Component {
     }
 
     handleSubmit() {
+        if (this.isEmpty(this.state.comments)) {
+            alert("No comments supplied.  Form cannot be submitted.");
+            return;
+        }
         this.setState({ fname: "", lname: "", email: "", comments: "", return: true });
     }
 
     handleCancel() {
         this.setState({ fname: "", lname: "", email: "", comments: "", return: true });
+    }
+
+    isEmpty(str) {
+        if (! str || 0 === str.length || !str.trim())
+            return true;
+
+        return false;
     }
 
     render() {

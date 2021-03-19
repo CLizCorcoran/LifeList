@@ -19,9 +19,21 @@ class Login extends React.Component {
 
 
     handleLogin(event) {
+        if (this.isEmpty(this.state.username)) {
+            alert("Username must be supplied.");
+            return;
+        }
+
         this.setState({ username: "", password: "", loggedIn: true });
         this.props.onLogin(this.state.username);
 
+    }
+
+    isEmpty(str) {
+        if (! str || 0 === str.length || !str.trim())
+            return true;
+
+        return false;
     }
 
 
@@ -53,9 +65,7 @@ class Login extends React.Component {
             )
         }
 
-        // If no one is logged in, render the form to allow them to do
-        //  so.  Not that the password is completely ignored.  None
-        //  even needs to be supplied.  
+     
         return (
 
             <div id="login">

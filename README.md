@@ -67,3 +67,19 @@ To mark the task as complete, they simply click on the checkmark.  At that point
 To mark a task as incomplete, the user simply clicks on the green checkmark.  Doing so will return it to the white color to indicate that it is
 now incomplete.  
 
+
+## Technologies Used
+This web application was build using HTML, JavaScript, React, React Routes, and Redux.  
+
+For this project, I did not use SASS or Bootstrap directly.  A side goal for this project was to practice more CSS.  
+
+
+## Future Improvements
+The goal of this project was to focus on React, React Routes, and Redux.  Should I have time, I would like to enhance the html and styles more.  At some point, it is just time to let go of a project and move on.  There are some areas I wish I could have enhanced.  
+
+- Default List:  My intention when adding authentication was to have pre-built lists for some users.  I really wanted a static list for Minnie Mouse or Pooh to appear when they logged in.  That would have been cute.  
+
+- Error handling is not the best.  I have alert boxes in some places that just don't look nice.  It was too much to tie in Redux in with form validation at the point in time that I thought about it.  
+
+- Add more information to events.  I really wanted to add event start and completion dates.  
+

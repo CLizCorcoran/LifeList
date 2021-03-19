@@ -81,6 +81,7 @@ input, button, select, optgroup, textarea {
   margin: auto;
   width: 50%;
   max-width: 600px;
+  padding-top: 25px;
 }
 
 button {
@@ -133,6 +134,8 @@ button:hover {
   background-color: #008cba;
 }
 
+
+
 .btn:not(:disabled):not(.disabled) {
   cursor: pointer;
 }
@@ -141,6 +144,15 @@ button:hover {
   color: #fff;
   background-color: #006f94;
   border-color: #006687;
+}
+
+.btn.disabled, .btn:disabled {
+  opacity: 0.65;
+}
+
+a.btn.disabled,
+fieldset:disabled a.btn {
+  pointer-events: none;
 }
 
 .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle {

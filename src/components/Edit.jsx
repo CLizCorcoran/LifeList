@@ -36,12 +36,23 @@ class Edit extends React.Component {
     }
 
     handleSubmit() {
+        if (this.isEmpty(this.state.title)) {
+            alert("An event must have a title.");
+            return;
+        }
         this.props.onEdit(this.props.id, this.state.title, this.state.description);
         this.setState({ title: "", description: "", priority: 0, return: true });
     }
 
     handleCancel() {
         this.setState({ title: "", description: "", priority: 0, return: true });
+    }
+
+    isEmpty(str) {
+        if (! str || 0 === str.length || !str.trim())
+            return true;
+
+        return false;
     }
 
     render() {

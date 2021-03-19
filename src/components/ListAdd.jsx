@@ -29,12 +29,24 @@ class ListAdd extends React.Component {
     }
 
     handleSubmit() {
+        if (this.isEmpty(this.state.title)) {
+            alert("A title must be supplied before a task can be added.");
+            return;
+        }
+        
         this.props.onAdd(this.state.title, this.state.description, this.state.priority);
         this.setState({ title: "", description: "", priority: 0, return: true });
 	}
 
     handleCancel() {
         this.setState({ title: "", description: "", priority: 0, return: true });
+    }
+
+    isEmpty(str) {
+        if (! str || 0 === str.length || !str.trim())
+            return true;
+
+        return false;
     }
 
     render() {
